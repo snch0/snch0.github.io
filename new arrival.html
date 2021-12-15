@@ -23,7 +23,11 @@ public void onClick(DialogInterface dialog, int which) {
         VideoInfo info = videoItems.get(selectedPosition);
         intentInfo.putExtra("Copy of New Arrival Banner Template - Made with PosterMyWall.mp4", info.name);             
         intentInfo.putExtra("fileSize", info.size);
-        intentInfo.putExtra("absolutePath", info.absolutePath);
+        intentInfo.putExtra("<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+video {
+  width: 100%;
+  height: auto;", info.absolutePath);
         intentInfo.putExtra("arrayPath", arrayPath);
 
         startActivity(intentInfo);  
@@ -122,3 +126,6 @@ a:hover {
 </body>
 </html>
 
+
+  
+ 
