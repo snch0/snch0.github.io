@@ -9,9 +9,35 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<script> 
+@Override
+public void onClick(DialogInterface dialog, int which) {
+    if (arg1 == 0) {
+        Intent intentInfo = new Intent(ListViewActivity.this, DialogBox.class);
+        // Retrieve the path names of all videos from the top to the
+        // selected item (inclusive).
+        arrayPath = new String[selectedPosition+1];
+        for (int i = 0; i <= selectedPosition; ++i) {
+            arrayPath[i] = videoItems.get(i).absolutePath;
+        }
+        VideoInfo info = videoItems.get(selectedPosition);
+        intentInfo.putExtra("Copy of New Arrival Banner Template - Made with PosterMyWall.mp4", info.name);             
+        intentInfo.putExtra("fileSize", info.size);
+        intentInfo.putExtra("absolutePath", info.absolutePath);
+        intentInfo.putExtra("arrayPath", arrayPath);
 
-<div class="container">
-  <h2>New Arrival 2021</h2>  
+        startActivity(intentInfo);  
+    }
+    else
+    {
+        deleteFile();
+    }
+}
+    </script>
+
+   <h1> <video controls autoplay> width="320" height="240" controls>
+      <source src="Copy%20of%20New%20Arrival%20Banner%20Template%20-%20Made%20with%20PosterMyWall.mp4"></h1> 
+  <h2>Most wanted</h2>  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -46,6 +72,52 @@
     </a>
   </div>
 </div>
+    
+    <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #CCC2C0;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
+</style>
+</head>
+<body>
+
+
+
+<a href="#" class="previous">&laquo; Previous</a>
+        <a href="Shop.html" class="next">Shop &raquo;</a>
+
+<a href="#" class="previous round">&#8249;</a>
+<a href="Shop.html" class="next round">&#8250;</a>
+  
+</body>
+</html> 
+
+
 
 </body>
 </html>
